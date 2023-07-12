@@ -107,7 +107,7 @@ However, if you wish to install the `panda_simulator` separately, you can clone 
 
 ## Usage of Panda Simulator
 
-After successfully installing all the dependencies and setting up the Catkin workspace, you can launch the Gazebo simulator and other utilities like rviz(http://wiki.ros.org/rviz/UserGuide#Install_from_debian_repository). Please refer to the [usage instructions of the panda_simulator package](https://github.com/justagist/panda_simulator#usage) for more details.
+After successfully installing all the dependencies and setting up the Catkin workspace, you can launch the Gazebo simulator and other utilities like [rviz](http://wiki.ros.org/rviz/UserGuide#Install_from_debian_repository). Please refer to the [usage instructions of the panda_simulator package](https://github.com/justagist/panda_simulator#usage) for more details.
 
 Remember, if you don't want to deal with these extra steps, simply cloning the main repository `git@github.com:omcakici/grip-personalized-gesture-learning.git` will give you a fully functioning system, including the usage of `panda_simulator`.
 
