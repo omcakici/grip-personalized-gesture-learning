@@ -73,14 +73,17 @@ Open a terminal and execute the following command:
     ```
 2. **Setup keys**
 Add the necessary keys with the following command:
+   
    `wget https://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -`
 
 3. **Update your sources:**
 Update your package lists with the following command:
+   
    `sudo apt-get update`
    
 4. **Install Gazebo**:
 Install Gazebo with this command:
+  
    `sudo apt-get install gazebo11`
 
 ## Clone the Repository
