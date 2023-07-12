@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/omer/Workspaces/franka_ws/devel/.private/franka_visualization/setup.sh

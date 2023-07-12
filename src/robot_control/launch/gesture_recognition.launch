@@ -1,0 +1,12 @@
+<launch>
+    <!-- Define the argument -->
+    <arg name="email" default="default@example.com"/>
+
+    <!-- Pass the argument to cam_controller.py script -->
+    <node name="cam_controller" pkg="robot_control" type="cam_controller.py" output="screen">
+        <param name="email" value="$(arg email)" />
+    </node>
+
+    <!-- Run sim_controller.py script -->
+    <node name="sim_controller" pkg="robot_control" type="sim_controller.py" output="screen" />
+</launch>

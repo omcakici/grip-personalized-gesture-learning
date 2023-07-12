@@ -1,0 +1,1 @@
+/home/omer/Workspaces/franka_ws/devel/.private/robot_control/share/common-lisp/ros/robot_control/msg/_package_GuiCmd.lisp

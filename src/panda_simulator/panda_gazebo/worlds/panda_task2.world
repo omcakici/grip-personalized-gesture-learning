@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <world name="default">
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+
+    <include>
+      <uri>model://sun</uri>
+    </include>
+    
+    <include>
+      <uri>model://unit_box</uri>
+      <pose> 0.338408 0.0 0.155488 0 0 0</pose>
+    </include>
+    
+    <include>
+      <uri>model://green_wooden_cube</uri>
+      <pose> 0.288978 -0.175919 0.310979 0 0 0</pose>
+    </include> 
+   
+    <include>
+      <uri>model://blue_wooden_cube</uri>
+      <pose> 0.288978 -0.034 0.310979 0 0 0</pose>
+    </include> 
+    
+    <include>
+      <uri>model://red_wooden_cube</uri>
+      <pose> 0.288978 0.148379 0.310979 0 0 0</pose>
+    </include> 
+    
+    <physics type="ode">
+      <real_time_update_rate>1000.0</real_time_update_rate>
+    </physics>
+    
+    <gravity>
+      0.0 0.0 -9.8
+    </gravity>
+
+    <gui fullscreen='0'>
+    </gui>
+
+  </world>
+</sdf>
+
