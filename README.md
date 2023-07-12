@@ -61,6 +61,33 @@ source ~/.bashrc
 
 You now have a functional Catkin workspace in ROS Noetic! You can add or create new ROS packages in the `src` folder of your workspace. Remember to always source the `setup.bash` file in the `devel` folder before you start working with the Catkin workspace, or the ROS packages might not work correctly.
 
+## Installing Gazebo
+
+Gazebo is a 3D simulation software which, when used alongside ROS and the `panda_simulator` package, provides a virtual environment for the robot. To install Gazebo on your Ubuntu system, follow these steps:
+
+1. **Add Gazebo package list to your sources list**:
+Open a terminal and execute the following command:
+    
+    ```
+    echo "deb <http://packages.osrfoundation.org/gazebo/ubuntu-stable> `lsb_release -cs` main" | sudo tee /etc/apt/sources.list.d/gazebo-stable.list
+    ```
+    
+2. **Setup keys**
+    
+    wget https://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
+    
+
+1. **Update your sources:**
+Update your package lists with the following command:
+- `sudo apt-get update`
+
+1. **Install Gazebo**:
+Install Gazebo with this command:
+
+```
+sudo apt-get install gazebo11
+```
+
 ## Clone the Repository
 
 Finally, fetch the GitHub repository into the `src` folder of your Catkin workspace using the following command:
