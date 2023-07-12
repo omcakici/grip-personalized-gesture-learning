@@ -71,22 +71,17 @@ Open a terminal and execute the following command:
     ```
     echo "deb <http://packages.osrfoundation.org/gazebo/ubuntu-stable> `lsb_release -cs` main" | sudo tee /etc/apt/sources.list.d/gazebo-stable.list
     ```
-    
 2. **Setup keys**
-    
-    wget https://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
-    
+Add the necessary keys with the following command:
+   `wget https://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -`
 
-1. **Update your sources:**
+3. **Update your sources:**
 Update your package lists with the following command:
-- `sudo apt-get update`
-
-1. **Install Gazebo**:
+   `sudo apt-get update`
+   
+4. **Install Gazebo**:
 Install Gazebo with this command:
-
-```
-sudo apt-get install gazebo11
-```
+   `sudo apt-get install gazebo11`
 
 ## Clone the Repository
 
