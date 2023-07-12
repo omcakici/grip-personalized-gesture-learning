@@ -28,7 +28,10 @@ pip3 install pybullet
 pip3 install qibullet
 pip3 install opencv-python
 pip3 install numpy
+pip3 install numpy-quaternion
 ```
+
+Note: Using `sudo` with `pip3` ensures that packages are installed system-wide. If you prefer to install packages only for the current user, you can omit the `sudo` command.
 
 ## Create a Catkin Workspace
 
@@ -70,6 +73,18 @@ git clone git@github.com:omcakici/grip-personalized-gesture-learning.git
 Remember to pull the repository into your `Workspaces/src` folder.
 
 With the repository cloned and all dependencies installed, you are ready to proceed with running the system.
+
+## Note on Panda Simulator
+
+The codebase incorporates the [panda_simulator](https://github.com/justagist/panda_simulator) package, a Gazebo simulator for the Franka Emika Panda robot with a ROS interface. This simulator offers customizable low-level controllers and real-time robot state feedback similar to the actual robot when using the Franka ROS Interface package. The system dependencies and package setup for the panda_simulator are fully included when you clone this repository, eliminating the need for separate installations.
+
+However, if you wish to install the `panda_simulator` separately, you can clone it from the original repository. Note that, during the installation, you'll need to modify the `dependencies.rosinstall` file inside the `panda_simulator` package. Change the `version` field of the `panda_moveit_config` from `melodic-devel` to `kinetic-devel` before running `./build_ws.sh` to avoid errors.
+
+## Usage
+
+After successfully installing all the dependencies and setting up the Catkin workspace, you can launch the Gazebo simulator and other utilities like rviz. Please refer to the [usage instructions of the panda_simulator package](https://github.com/justagist/panda_simulator#usage) for more details.
+
+Remember, if you don't want to deal with these extra steps, simply cloning the main repository `git@github.com:omcakici/grip-personalized-gesture-learning.git` will give you a fully functioning system, including the usage of `panda_simulator`.
 
 
 ## System Design
