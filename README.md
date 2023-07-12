@@ -37,21 +37,21 @@ Note: Using `sudo` with `pip3` ensures that packages are installed system-wide. 
 
 After installing the system requirements, follow these steps to create a Catkin workspace:
 
-1. Open a new terminal and create a new directory for your Catkin workspace in the home directory (e.g., "home/{username}/Workspaces/{workspace_name}/src"). Navigate into the new directory with the following commands:
+1. Open a new terminal and create a new directory for your Catkin workspace in the home directory (e.g., "home/Workspaces/src"). Navigate into the new directory with the following commands:
 
 ```
-mkdir -p ~/Workspaces/grip/workspace_name
+mkdir -p ~/Workspaces/src
 cd ~/
 ```
 
-1. Create the workspace. Although you can use `catkin_make`, it is recommended to use `catkin build` for larger repositories as it is safer.
+2. Create the workspace. Although you can use `catkin_make`, it is recommended to use `catkin build` for larger repositories as it is safer.
 
 ```
-cd ~/Workspaces/workspace_name
+cd ~/Workspaces
 catkin build
 ```
 
-1. Source your new `setup.*.sh` file. You'll need to do this every time you open a new terminal, or you can add it to your bashrc to auto-source it:
+3. Source your new `setup.*.sh` file. You'll need to do this every time you open a new terminal, or you can add it to your bashrc to auto-source it:
 
 ```
 source devel/setup.bash
