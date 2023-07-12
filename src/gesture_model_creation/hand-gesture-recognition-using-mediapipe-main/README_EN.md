@@ -1,8 +1,11 @@
+[[Japanese](README.md)/English]
+
+> **Note**
+> <br>I created a repository of model zoo for keypoint classification.
+> <br>→ [Kazuhito00/hand-keypoint-classification-model-zoo](https://github.com/Kazuhito00/hand-keypoint-classification-model-zoo)
+
 # hand-gesture-recognition-using-mediapipe
-Estimate hand pose using MediaPipe (Python version).<br> This is a sample 
-program that recognizes hand signs and finger gestures with a simple MLP using the detected key points.
-<br> ❗ _️**This is English Translated version of the [original repo](https://github.com/Kazuhito00/hand-gesture-recognition-using-mediapipe). All Content is translated to english along with comments and notebooks**_ ❗
-<br> 
+Estimate hand pose using MediaPipe(Python version).<br> This is a sample program that recognizes hand signs and finger gestures with a simple MLP using the detected key points.
 ![mqlrf-s6x16](https://user-images.githubusercontent.com/37477845/102222442-c452cd00-3f26-11eb-93ec-c387c98231be.gif)
 
 This repository contains the following contents.
@@ -16,12 +19,27 @@ This repository contains the following contents.
 * mediapipe 0.8.1
 * OpenCV 3.4.2 or Later
 * Tensorflow 2.3.0 or Later<br>tf-nightly 2.5.0.dev or later (Only when creating a TFLite for an LSTM model)
-* scikit-learn 0.23.2 or Later (Only if you want to display the confusion matrix) 
+* scikit-learn 0.23.2 or Later (Only if you want to display the confusion matrix)
 * matplotlib 3.3.2 or Later (Only if you want to display the confusion matrix)
 
 # Demo
 Here's how to run the demo using your webcam.
 ```bash
+python app.py
+```
+
+Here is how to run the demo using Docker and a webcam.
+```bash
+docker build -t hand_gesture .
+
+xhost +local: && \
+docker run --rm -it \
+--device /dev/video0:/dev/video0 \
+-v `pwd`:/home/user/workdir \
+-v /tmp/.X11-unix/:/tmp/.X11-unix:rw \
+-e DISPLAY=$DISPLAY \
+hand_gesture:latest
+
 python app.py
 ```
 
@@ -40,7 +58,7 @@ Tracking confidence threshold (Default：0.5)
 │  app.py
 │  keypoint_classification.ipynb
 │  point_history_classification.ipynb
-│  
+│
 ├─model
 │  ├─keypoint_classifier
 │  │  │  keypoint.csv
@@ -48,14 +66,14 @@ Tracking confidence threshold (Default：0.5)
 │  │  │  keypoint_classifier.py
 │  │  │  keypoint_classifier.tflite
 │  │  └─ keypoint_classifier_label.csv
-│  │          
+│  │
 │  └─point_history_classifier
 │      │  point_history.csv
 │      │  point_history_classifier.hdf5
 │      │  point_history_classifier.py
 │      │  point_history_classifier.tflite
 │      └─ point_history_classifier_label.csv
-│          
+│
 └─utils
     └─cvfpscalc.py
 </pre>
@@ -137,14 +155,17 @@ The image of the model prepared in "[point_history_classification.ipynb](point_h
 The model using "LSTM" is as follows. <br>Please change "use_lstm = False" to "True" when using (tf-nightly required (as of 2020/12/16))<br>
 <img src="https://user-images.githubusercontent.com/37477845/102246817-8368b180-3f42-11eb-9851-23a7b12467aa.png" width="60%">
 
+# Application example
+Here are some application examples.
+* [Control DJI Tello drone with Hand gestures](https://towardsdatascience.com/control-dji-tello-drone-with-hand-gestures-b76bd1d4644f)
+* [Classifying American Sign Language Alphabets on the OAK-D](https://www.cortic.ca/post/classifying-american-sign-language-alphabets-on-the-oak-d)
+
 # Reference
 * [MediaPipe](https://mediapipe.dev/)
+* [Kazuhito00/mediapipe-python-sample](https://github.com/Kazuhito00/mediapipe-python-sample)
 
 # Author
 Kazuhito Takahashi(https://twitter.com/KzhtTkhs)
 
-# Translation and other improvements
-Nikita Kiselov(https://github.com/kinivi)
- 
-# License 
+# License
 hand-gesture-recognition-using-mediapipe is under [Apache v2 license](LICENSE).
