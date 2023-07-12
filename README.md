@@ -37,17 +37,17 @@ Note: Using `sudo` with `pip3` ensures that packages are installed system-wide. 
 
 After installing the system requirements, follow these steps to create a Catkin workspace:
 
-1. Open a new terminal and create a new directory for your Catkin workspace in the home directory (e.g., "home/{username}/Workspaces/src"). Navigate into the new directory with the following commands:
+1. Open a new terminal and create a new directory for your Catkin workspace in the home directory (e.g., "home/{username}/Workspaces/{workspace_name}/src"). Navigate into the new directory with the following commands:
 
 ```
-mkdir -p ~/Workspaces/src
+mkdir -p ~/Workspaces/grip/workspace_name
 cd ~/
 ```
 
 1. Create the workspace. Although you can use `catkin_make`, it is recommended to use `catkin build` for larger repositories as it is safer.
 
 ```
-cd ~/Workspaces
+cd ~/Workspaces/workspace_name
 catkin build
 ```
 
@@ -80,7 +80,7 @@ The codebase incorporates the [panda_simulator](https://github.com/justagist/pan
 
 However, if you wish to install the `panda_simulator` separately, you can clone it from the original repository. Note that, during the installation, you'll need to modify the `dependencies.rosinstall` file inside the `panda_simulator` package. Change the `version` field of the `panda_moveit_config` from `melodic-devel` to `kinetic-devel` before running `./build_ws.sh` to avoid errors.
 
-## Usage
+## Usage of Panda Simulator
 
 After successfully installing all the dependencies and setting up the Catkin workspace, you can launch the Gazebo simulator and other utilities like rviz. Please refer to the [usage instructions of the panda_simulator package](https://github.com/justagist/panda_simulator#usage) for more details.
 
