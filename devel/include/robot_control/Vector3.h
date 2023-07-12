@@ -1,1 +1,0 @@
-/home/omer/Workspaces/franka_ws/devel/.private/robot_control/include/robot_control/Vector3.h

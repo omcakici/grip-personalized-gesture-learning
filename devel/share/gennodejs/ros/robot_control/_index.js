@@ -1,1 +1,0 @@
-/home/omer/Workspaces/franka_ws/devel/.private/robot_control/share/gennodejs/ros/robot_control/_index.js

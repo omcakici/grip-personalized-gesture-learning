@@ -1,1 +1,0 @@
-/home/omer/Workspaces/franka_ws/devel/.private/franka_core_msgs/share/roseus/ros/franka_core_msgs/manifest.l

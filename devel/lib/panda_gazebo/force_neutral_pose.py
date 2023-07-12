@@ -1,1 +1,0 @@
-/home/omer/Workspaces/franka_ws/devel/.private/panda_gazebo/lib/panda_gazebo/force_neutral_pose.py
