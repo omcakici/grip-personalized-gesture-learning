@@ -233,7 +233,7 @@ Here are the tasks along with their corresponding instructions and images:
 
 #### Task 1: Picking and Placing ####
 
-![Task 1 Image](https://github.com/omcakici/grip-personalized-gesture-learning/blob/main/extras/Static%20Task1.png)
+<img src="https://github.com/omcakici/grip-personalized-gesture-learning/blob/main/extras/Static%20Task1.png" width="300" height="300">
 
 In this task, a box is placed on the table in front of the Franka Emika Panda robotic arm. The objective is to pick up the box and transport it across the table to a designated area marked by a wooden tray using either hand gestures or keyboard commands.
 
@@ -247,7 +247,7 @@ To perform this task using keyboard control, follow the steps outlined in the [k
 
 #### Task 2: Ordering Boxes
 
-![Task 2 Image](https://github.com/omcakici/grip-personalized-gesture-learning/blob/main/extras/Static%20Task2.png)
+<img src="https://github.com/omcakici/grip-personalized-gesture-learning/blob/main/extras/Static%20Task2.png" width="300" height="300">
 
 This task requires the repositioning of three colored boxes on a table using the Franka Emika robotic arm. The boxes should be ordered from left to right as blue, green, and red.
 
@@ -255,7 +255,7 @@ To perform this task, follow the same steps as Task 1, but replace `panda_world_
 
 #### Task 3: Advanced Ordering Boxes
 
-![Task 3 Image](https://github.com/omcakici/grip-personalized-gesture-learning/blob/main/extras/Static%20Task3.png)
+<img src="https://github.com/omcakici/grip-personalized-gesture-learning/blob/main/extras/Static%20Task3.png" width="300" height="300">
 
 This task is an advanced version of Task 2, requiring the same reordering of boxes but now with additional complexity due to more confined spaces and stricter positioning requirements.
 
