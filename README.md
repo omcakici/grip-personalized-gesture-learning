@@ -133,8 +133,6 @@ However, if you wish to install the `panda_simulator` separately, you can clone 
 
 Remember, if you don't want to deal with these extra steps, simply cloning the main repository `git@github.com:omcakici/grip-personalized-gesture-learning.git` will give you a fully functioning system, including the usage of `panda_simulator`. As you already did in previous step.
 
-
-
 ## Usage of Panda Simulator
 
 After successfully installing all the dependencies and setting up the Catkin workspace, you can launch the Gazebo simulator and other utilities like [rviz](http://wiki.ros.org/rviz/UserGuide#Install_from_debian_repository). Please refer to the [usage instructions of the panda_simulator package](https://github.com/justagist/panda_simulator#usage) for more details.
@@ -230,6 +228,39 @@ This keyboard-based control scheme provides an alternative method for controllin
 ### Task Execution
 
 In the final stage, participants use both gesture control and keyboard control to manipulate the Franka Emika Panda robotic arm. The aim is to assess the effectiveness and intuitiveness of these control methods across a series of increasingly complex tasks.
+
+Here are the tasks along with their corresponding instructions and images:
+
+#### Task 1: Picking and Placing ####
+
+![Task 1 Image](https://github.com/omcakici/grip-personalized-gesture-learning/blob/main/extras/Static%20Task1.png)
+
+In this task, a box is placed on the table in front of the Franka Emika Panda robotic arm. The objective is to pick up the box and transport it across the table to a designated area marked by a wooden tray using either hand gestures or keyboard commands.
+
+To perform this task using gesture control, follow these steps:
+1. Start ROS by running `roscore` in the terminal.
+2. Open a new terminal and navigate to your workspace `cd ~/Workspaces/catkin_ws`.
+3. Launch the environment with `roslaunch panda_gazebo panda_world_task1.launch`.
+4. To start gesture recognition, open a new terminal and run `roslaunch robot_control gesture_recognition.launch email:={username}` (replace `{username}` with your username).
+
+To perform this task using keyboard control, follow the steps outlined in the [keyboard-based control section](https://github.com/omcakici/grip-personalized-gesture-learning/tree/main#keyboard-based-robotic-arm-control), but use `roslaunch panda_gazebo panda_world_task1.launch` instead of `roslaunch panda_gazebo panda_world.launch` in the second step.
+
+#### Task 2: Ordering Boxes
+
+![Task 2 Image](https://github.com/omcakici/grip-personalized-gesture-learning/blob/main/extras/Static%20Task2.png)
+
+This task requires the repositioning of three colored boxes on a table using the Franka Emika robotic arm. The boxes should be ordered from left to right as blue, green, and red.
+
+To perform this task, follow the same steps as Task 1, but replace `panda_world_task1.launch` with `panda_world_task2.launch` in the third step for both gesture and keyboard controls.
+
+#### Task 3: Advanced Ordering Boxes
+
+![Task 3 Image](https://github.com/omcakici/grip-personalized-gesture-learning/blob/main/extras/Static%20Task3.png)
+
+This task is an advanced version of Task 2, requiring the same reordering of boxes but now with additional complexity due to more confined spaces and stricter positioning requirements.
+
+To perform this task, follow the same steps as in Task 1, but replace `panda_world_task1.launch` with `panda_world_task3.launch` in the third step for both gesture and keyboard controls.
+
 
 ## Usage
 
