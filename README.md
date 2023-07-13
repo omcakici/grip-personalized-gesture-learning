@@ -181,7 +181,7 @@ Once the app launches, follow these steps to create and register your personaliz
 7. Once you've created all six gestures, the system will automatically generate your personalized gesture model within 20 seconds or less.
 8. Once your model has been generated successfully, you can see labels on your hand that correspond to the gestures you taught the machine, e.g., left, right, etc.
 
-This process uses a neural network to translate your hand gestures, represented as 42-dimensional vectors, into corresponding robotic arm movements.
+This process records your hand gestures, represented as 42-dimensional vectors, and generates a unique gesture model using a neural network. Each gesture model is a set of six gestures (left, right, up, down, open gripper, close gripper) personalized for you. Upon successful creation, you will be able to see labels on your hand corresponding to these gestures. While these gestures will later be used to control a robotic arm, at this stage, the process is solely focused on creating and visualizing your personalized gesture set.
 
 ### Gesture Recognition and Robotic Arm Control
 
