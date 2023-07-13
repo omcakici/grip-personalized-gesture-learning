@@ -183,9 +183,24 @@ Once the app launches, follow these steps to create and register your personaliz
 
 This process records your hand gestures, represented as 42-dimensional vectors, and generates a unique gesture model using a neural network. Each gesture model is a set of six gestures (left, right, up, down, open gripper, close gripper) personalized for you. Upon successful creation, you will be able to see labels on your hand corresponding to these gestures. While these gestures will later be used to control a robotic arm, at this stage, the process is solely focused on creating and visualizing your personalized gesture set.
 
-### Gesture Recognition and Robotic Arm Control
+### **Gesture Recognition and Robotic Arm Control**
 
-The core of the GRIP system revolves around the recognition and interpretation of personalized gestures. The system is built around the Robot Operating System (ROS Noetic) and Python 3, facilitating the real-time translation of human hand gestures into executable instructions for the robotic arm.
+The heart of the GRIP system is centered on recognizing and interpreting personalized gestures. Built with the Robot Operating System (ROS Noetic) and Python 3, it enables the real-time conversion of human hand gestures into commands for the robotic arm.
+
+To control the Franka Emika robot with your gestures, follow these steps:
+
+1. **Open up a terminal and initialize ROS:** Use the command `roscore` to start the ROS master server.
+
+2. **Launch the Franka Emika robot in Gazebo:** In a new terminal window, navigate to your workspace directory using `cd ~/Workspaces/catkin_ws/` and run `roslaunch panda_gazebo panda_world.launch`. This command will launch an empty world with the Franka Emika robot.
+
+3. **Launch the Gesture Recognition system:** In a new terminal window, navigate again to the workspace directory and run `roslaunch robot_control gesture_recognition.launch email:={username}`. Replace `{username}` with the username you used during the personalized gesture creation. For instance, if your username was 'omcakii', the command would be `roslaunch robot_control gesture_recognition.launch email:=omcakii`.
+
+   If you've forgotten your username, you can find it by going to the directory where the models are stored: `cd ~/Workspaces/catkin_ws/src/grip-personalized-gesture-learning/robot_control/robot_control/utils/keypoint_classifier/tflite_models/`. Your model will be named `{username}.tflite` - just use the `{username}` part.
+
+After successfully executing these commands, the OpenCV camera window should pop up, enabling you to control the robotic arm via your hand gestures.
+
+Remember, the system executes a gesture command every two seconds. So after making a gesture, lower your hand to avoid giving unintended commands. This process ensures that each command is executed in isolation, providing smoother and more accurate control of the robotic arm.
+
 
 ### Keyboard-Based Robotic Arm Control
 
