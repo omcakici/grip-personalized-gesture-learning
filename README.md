@@ -99,29 +99,31 @@ Remember to pull the repository into your `Workspaces/src` folder.
 
 With the repository cloned and all dependencies installed, you are ready to proceed with running the system.
 
-## Setup ROS and Gazebo Environment Variables
+## **Setup ROS and Gazebo Environment Variables**
 
-After installing ROS, Gazebo, and creating your catkin workspace, it's crucial to source them correctly in every terminal session. However, to avoid sourcing them manually, you can add the source commands to your `.bashrc` file.
+After installing ROS and Gazebo, and creating your catkin workspace, it's crucial to source them correctly in every terminal session. You can automate this process by adding the appropriate source commands to your `.bashrc` file. The `.bashrc` file in your home directory is a script that runs whenever you start a new terminal session.
 
-The `.bashrc` file in your home directory is a script that is executed whenever you start a new terminal session. By adding commands to this file, you ensure they're run every time you open a terminal.
+Here's how you can add the necessary lines to your `.bashrc` file:
 
-Follow the steps below to add the necessary lines to your `.bashrc` file:
-
-1. Open the `.bashrc` file in a text editor. You can use nano (a command-line text editor), but feel free to use any text editor you're comfortable with. In a terminal, type:
-
-```bash
+1. **Open the `.bashrc` file in a text editor:** You can use nano, a command-line text editor. Type the following command in a terminal:
+```
 nano ~/.bashrc
 ```
-2. Scroll to the end of the file and add following lines:
-```source /opt/ros/noetic/setup.bash
+2. **Add the necessary source commands:** Scroll to the end of the file and add the following lines:
+```
+source /opt/ros/noetic/setup.bash
 source ~/Workspaces/catkin_ws/devel/setup.bash
 export GAZEBO_MODEL_PATH=${GAZEBO_MODEL_PATH}:~/Workspaces/catkin_ws/src/path_to_your_gazebo_models_directory
 ```
-In the previous instruction, replace path_to_your_gazebo_models_directory with the actual path to the directory containing your Gazebo model files.
 
-As an illustration, in my particular configuration, the command is:
-`export GAZEBO_MODEL_PATH=${GAZEBO_MODEL_PATH}:/home/omer/Workspaces/catkin_ws/src/grip-personalized-gesture-learning/panda_simulator/panda_gazebo/launch`
-Note that the specified directory holds several launch files for the Gazebo simulation. These files are paramount, as each one initiates a unique Gazebo environment with varying settings and configurations for the Franka robotic arm. Each launch file represents a distinct world within the Gazebo simulator, offering you a versatile range of simulation conditions.
+Replace `path_to_your_gazebo_models_directory` with the actual path to the directory containing your Gazebo model files. For instance, in my configuration, the command is:
+
+```
+export GAZEBO_MODEL_PATH=${GAZEBO_MODEL_PATH}:/home/omer/Workspaces/catkin_ws/src/grip-personalized-gesture-learning/panda_simulator/panda_gazebo/models
+```
+
+Note that the specified directory contains several model files for the Gazebo simulation. Each file initiates a unique Gazebo environment with different settings and configurations for the Franka robotic arm. Each model represents a distinct world within the Gazebo simulator, offering you a wide range of simulation conditions.
+
 
 ## Note on Panda Simulator
 
