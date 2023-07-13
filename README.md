@@ -149,7 +149,39 @@ These components sequentially build upon the previous one, creating a robust and
 
 ### Personalized Gesture Creation
 
-In the initial stage, participants are shown clips illustrating the robotic arm's movements. They then create a corresponding hand gesture for each movement. These gestures are recorded using the GestureCraft+ Train & Personalized Gestures app. A simple neural network model takes this hand gesture data, represented as 42-dimensional vectors (accounting for 21 landmarks in two dimensions), and processes it through several layers to provide a personalized mapping of gestures for each individual participant.
+Begin by navigating to the `gesture_model_creation` directory:
+
+```
+cd ~/Workspaces/catkin_ws/src/grip-personalized-gesture-learning/gesture_model_creation
+```
+
+You can launch the GestureCraft+ Train & Personalized Gestures app with one of two methods:
+
+- Method 1: Execute the Python script `create_model.py` with Python:
+
+```
+python create_model.py
+```
+
+- Method 2: Use the ROS (Robot Operating System) command `rosrun` in the parent directory:
+
+```
+cd ~/Workspaces/catkin_ws/
+rosrun robot_control create_model.py
+```
+
+Once the app launches, follow these steps to create and register your personalized gesture set:
+
+1. Enter your name and a memorable username. Keep a note of the username; you'll need it for future tasks.
+2. Click on 'Check Model'. If you don't already have a set of gestures generated, the 'Start Gesture Classifier' button will be enabled.
+3. Click on 'Start Gesture Classifier'. This initiates OpenCV to record your gesture creation.
+4. You'll be instructed to press the 'k' button, which will prompt a message: "Press the Tab button 25 times while showing the 'Left' gesture."
+5. A 5-second video will pop up, demonstrating the robotic arm moving to the left. After watching the video, perform a comfortable gesture that you associate with this movement, and press the Tab key 25 times to record the hand landmarks.
+6. Repeat steps 4 and 5 for all six gestures (left, right, up, down, open gripper, close gripper).
+7. Once you've created all six gestures, the system will automatically generate your personalized gesture model within 20 seconds or less.
+8. Once your model has been generated successfully, you can see labels on your hand that correspond to the gestures you taught the machine, e.g., left, right, etc.
+
+This process uses a neural network to translate your hand gestures, represented as 42-dimensional vectors, into corresponding robotic arm movements.
 
 ### Gesture Recognition and Robotic Arm Control
 
