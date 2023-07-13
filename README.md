@@ -6,7 +6,7 @@ The effectiveness of the system was evaluated within a Gazebo simulated environm
 
 # Installation
 
-This repository contains code that is designed to run on Ubuntu 20.04 and ROS Noetic. Before you can run the system, you'll need to install some dependencies and set up a catkin workspace.
+This repository contains code that is designed to run on Ubuntu 20.04 and ROS Noetic. Before you can run the system, you'll need to install some dependencies and set up a catkin workspace(Catkin workspace is a structured directory that allows you to organize, build, and manage your ROS packages efficiently).
 
 ## Pre-Installation
 
