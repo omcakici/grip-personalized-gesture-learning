@@ -202,9 +202,28 @@ After successfully executing these commands, the OpenCV camera window should pop
 Remember, the system executes a gesture command every two seconds. So after making a gesture, lower your hand to avoid giving unintended commands. This process ensures that each command is executed in isolation, providing smoother and more accurate control of the robotic arm.
 
 
-### Keyboard-Based Robotic Arm Control
+### **Keyboard-Based Robotic Arm Control**
 
-An alternative control scheme for the Franka Emika Panda robotic arm is also provided. This control scheme allows the user to manipulate the robotic arm using keyboard commands.
+The GRIP system also allows for the Franka Emika Panda robotic arm in the Gazebo simulation environment to be controlled using keyboard commands. This alternative control scheme uses a Python script that interfaces with ROS Noetic.
+
+Follow these steps to control the Franka Emika robot with your keyboard:
+
+1. **Initialize ROS:** Open up a terminal and run the command `roscore` to start the ROS master server.
+
+2. **Launch the Franka Emika robot in Gazebo:** In a new terminal window, navigate to your workspace directory with `cd ~/Workspaces/catkin_ws/` and run `roslaunch panda_gazebo panda_world.launch`. This command will start an empty world with the Franka Emika robot.
+
+3. **Launch the Keyboard Controller:** In a new terminal window, navigate back to the workspace directory and run `rosrun robot_control panda_controller.py`. This command will start the keyboard controller for the robotic arm.
+
+Now, you can use the following keyboard commands to control the robot:
+
+- **Arrow keys:** Use the arrow keys to move the robot. The up arrow increases the Z-coordinate (upwards), the down arrow decreases the Z-coordinate (downwards), the left arrow decreases the Y-coordinate (leftwards), and the right arrow increases the Y-coordinate (rightwards). Each key press changes the position by a step size of 0.05 meters.
+
+- **Gripper Control:** Use the 'o' key to open the gripper and the 'c' key to close the gripper.
+
+- **Neutral Position:** Use the 'n' key to move the robotic arm to a neutral position and close the gripper simultaneously.
+
+This keyboard-based control scheme provides an alternative method for controlling the robotic arm and serves as a benchmark for comparing with the GRIP system's gesture-based interface. It's vital for evaluating the GRIP system's effectiveness and user-friendliness.
+
 
 ### Task Execution
 
