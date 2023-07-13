@@ -37,17 +37,17 @@ Note: Using `sudo` with `pip3` ensures that packages are installed system-wide. 
 
 After installing the system requirements, follow these steps to create a Catkin workspace:
 
-1. Open a new terminal and create a new directory for your Catkin workspace in the home directory (e.g., "home/Workspaces/src"). Navigate into the new directory with the following commands:
+1. Open a new terminal and create a new directory for your Catkin workspace in the `Workspaces` directory in your home folder. Then, navigate into the newly created directory with the following commands:
 
-```
-mkdir -p ~/Workspaces/src
-cd ~/
+```bash
+mkdir -p ~/Workspaces/catkin_ws/src
+cd ~/Workspaces/catkin_ws
 ```
 
 2. Create the workspace. Although you can use `catkin_make`, it is recommended to use `catkin build` for larger repositories as it is safer.
 
 ```
-cd ~/Workspaces
+cd ~/Workspaces/catkin_ws
 catkin build
 ```
 
@@ -55,7 +55,7 @@ catkin build
 
 ```
 source devel/setup.bash
-echo "source ~/Workspaces/devel/setup.bash" >> ~/.bashrc
+echo "source ~/Workspaces/catkin_ws/devel/setup.bash" >> ~/.bashrc
 source ~/.bashrc
 ```
 
@@ -99,6 +99,30 @@ Remember to pull the repository into your `Workspaces/src` folder.
 
 With the repository cloned and all dependencies installed, you are ready to proceed with running the system.
 
+## Setup ROS and Gazebo Environment Variables
+
+After installing ROS, Gazebo, and creating your catkin workspace, it's crucial to source them correctly in every terminal session. However, to avoid sourcing them manually, you can add the source commands to your `.bashrc` file.
+
+The `.bashrc` file in your home directory is a script that is executed whenever you start a new terminal session. By adding commands to this file, you ensure they're run every time you open a terminal.
+
+Follow the steps below to add the necessary lines to your `.bashrc` file:
+
+1. Open the `.bashrc` file in a text editor. You can use nano (a command-line text editor), but feel free to use any text editor you're comfortable with. In a terminal, type:
+
+```bash
+nano ~/.bashrc
+```
+2. Scroll to the end of the file and add following lines:
+```source /opt/ros/noetic/setup.bash
+source ~/Workspaces/catkin_ws/devel/setup.bash
+export GAZEBO_MODEL_PATH=${GAZEBO_MODEL_PATH}:~/Workspaces/catkin_ws/src/path_to_your_gazebo_models_directory
+```
+In the previous instruction, replace path_to_your_gazebo_models_directory with the actual path to the directory containing your Gazebo model files.
+
+As an illustration, in my particular configuration, the command is:
+`export GAZEBO_MODEL_PATH=${GAZEBO_MODEL_PATH}:/home/omer/Workspaces/catkin_ws/src/grip-personalized-gesture-learning/panda_simulator/panda_gazebo/launch`
+Note that the specified directory holds several launch files for the Gazebo simulation. These files are paramount, as each one initiates a unique Gazebo environment with varying settings and configurations for the Franka robotic arm. Each launch file represents a distinct world within the Gazebo simulator, offering you a versatile range of simulation conditions.
+
 ## Note on Panda Simulator
 
 The codebase incorporates the [panda_simulator](https://github.com/justagist/panda_simulator) package, a Gazebo simulator for the Franka Emika Panda robot with a ROS interface. This simulator offers customizable low-level controllers and real-time robot state feedback similar to the actual robot when using the Franka ROS Interface package. The system dependencies and package setup for the panda_simulator are fully included when you clone this repository, eliminating the need for separate installations.
@@ -106,6 +130,8 @@ The codebase incorporates the [panda_simulator](https://github.com/justagist/pan
 However, if you wish to install the `panda_simulator` separately, you can clone it from the original repository. Note that, during the installation, you'll need to modify the `dependencies.rosinstall` file inside the `panda_simulator` package. Change the `version` field of the `panda_moveit_config` from `melodic-devel` to `kinetic-devel` before running `./build_ws.sh` to avoid errors.
 
 Remember, if you don't want to deal with these extra steps, simply cloning the main repository `git@github.com:omcakici/grip-personalized-gesture-learning.git` will give you a fully functioning system, including the usage of `panda_simulator`. As you already did in previous step.
+
+
 
 ## Usage of Panda Simulator
 
