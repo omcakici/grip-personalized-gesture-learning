@@ -260,8 +260,3 @@ To perform this task, follow the same steps as Task 1, but replace `panda_world_
 This task is an advanced version of Task 2, requiring the same reordering of boxes but now with additional complexity due to more confined spaces and stricter positioning requirements.
 
 To perform this task, follow the same steps as in Task 1, but replace `panda_world_task1.launch` with `panda_world_task3.launch` in the third step for both gesture and keyboard controls.
-
-
-## Usage
-
-After successful installation, users can initiate interaction with the system by providing their name and email address in the given fields of the Gesture Classifier application. Users can then create their personalized gestures and, using either the gesture-based control or the keyboard-based control, manipulate the Franka Emika Panda robotic arm to carry out specific tasks in the Gazebo simulated environment.
