@@ -170,7 +170,7 @@ cd ~/Workspaces/catkin_ws/
 rosrun robot_control create_model.py
 ```
 
-![Gesture Creation](https://github.com/omcakici/grip-personalized-gesture-learning/blob/main/extras/figure06.png)
+<img src="https://github.com/omcakici/grip-personalized-gesture-learning/blob/main/extras/figure06.png" alt="Gesture Creation" width="400">
 Once the app launches, follow these steps to create and register your personalized gesture set:
 
 1. **Enter your name and a memorable username.** Keep a note of the username; you'll need it for future tasks.
